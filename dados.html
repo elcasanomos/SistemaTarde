@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>juego del dado</title>
+</head>
+<body>
+    <h1>juego del dado</h1>
+
+    <p>Elije un numero del 1 al 6:</p>
+    <input type="number"id="numeroUsuario"min="1"max="6">
+    <button onclick="jugarDado()">Lanzar dado</button>
+
+    <h3 id="Resultado"></h3>
+
+
+    <script>
+        function jugarDado() {
+            const eleccionUsuario =  parent(document.getElementById("numeroUsuario").value);
+
+            if (isNaN(eleccionUsuario)||   eleccionUsuario < 1 || eleccionUsuario > 6) {
+               document.getElementById("Resultado").textContent ="por favor,ingresa un numero entre 2 y 6.";
+               return;
+            }
+             dado1= Math.floor(Math.random()* 6) +1;
+             dado2 =Math.floor(Math.random()* 6) +1;
+             sumaDado=dado1 + dado2;
+             
+             mensaje="El dado 1 cayo en:"+ dado +".El dado 2 cayo en:"+ dado2+".<br";
+             mensaje+="Suma de los dados:" +sumaDados+".<br";
+
+            if (eleccionUsuario ===sumaDado) {
+                mensaje +="¡Ganaste!";
+            } else {
+                mensaje += "perdiste.intenta de nuevo.";
+            }
+            document.getElementById("resultado").textContent = mensaje;
+        }
+
+    </script>
+</body>
+</html>
